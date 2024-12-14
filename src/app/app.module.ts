@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserComponent,
     McqComponent,
     NotFoundComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -29,17 +29,28 @@ background-position: top center;
           <td>{{ user.dob }}</td>
           <td><img [src]="user.image" alt="User Image" width="50" height="50"></td>
           <td>
-            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="viewUser(user)">View</a>
-            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle2" role="button" (click)="viewUser(user)">Edit</a>
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
+              (click)="viewUser(user)">View</a>
+            <a (click)="viewUser(user)" class="btn btn-outline-warning" data-bs-toggle="modal" href="#exampleModalToggle2"
+              role="button">Edit</a>
+            <a (click)="deleteUser(user.id)" class="btn btn-danger" >Delete</a>
           </td>
         </tr>
       </tbody>
       <tfoot>
-
+        <tr>
+          <td colspan="7" class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+              data-bs-target="#addUserModal">
+              Add User
+            </button>
+          </td>
+        </tr>
       </tfoot>
     </table>
   </div>
 
 
   <app-user-info [selectingUser]="selecterUser" (notifyParent)="ngOnInit()"></app-user-info>
+  <app-user-create (notifyParent)="ngOnInit()"></app-user-create>
 </div>

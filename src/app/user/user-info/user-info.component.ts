@@ -18,6 +18,7 @@ export class UserInfoComponent {
   @Input() selectingUser : user = {id : 0,name : "",email : "",password : "",image: "", dob: ""};
   @Output() notifyParent: EventEmitter<void> = new EventEmitter();
   editButtonClick() {
+
     this.userEditForm.setValue(this.selectingUser);
   }
   userEditForm: FormGroup = new FormGroup({

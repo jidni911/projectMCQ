@@ -28,8 +28,16 @@ export class UserComponent implements OnInit {
   }
   viewUser(user: user) {
     this.selecterUser = user;
-    this.userInfoComponent.editButtonClick();
+    setTimeout(() => {
+      this.userInfoComponent.editButtonClick();
+    }, 200)
   }
-
-
+  deleteUser(id: number) {
+    if(window.confirm("Are you sure you want to delete this?")){
+      this.userService.deleteUser(id).subscribe((s)=>{
+        alert('User Deleted');
+        this.ngOnInit();
+      })
+    }
+  }
 }
