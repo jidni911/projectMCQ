@@ -6,24 +6,24 @@
         <h5 class="modal-title" id="exampleModalToggleLabel">
           User Info
         </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col">
-            <p><strong>ID:</strong> {{ selectingUser?.id }}</p>
-            <p><strong>Name:</strong> {{ selectingUser?.name }}</p>
-            <p><strong>Email:</strong> {{ selectingUser?.email }}</p>
-            <p><strong>Date of Birth:</strong> {{ selectingUser?.dob }}</p>
+            <p><strong>ID:</strong> {{ selectingUser.id }}</p>
+            <p><strong>Name:</strong> {{ selectingUser.name }}</p>
+            <p><strong>Email:</strong> {{ selectingUser.email }}</p>
+            <p><strong>Date of Birth:</strong> {{ selectingUser.dob }}</p>
           </div>
           <div class="col">
-            <img *ngIf="selectingUser?.image" [src]="selectingUser?.image" alt="User Image" width="100%">
+            <img *ngIf="selectingUser?.image" [src]="selectingUser.image" alt="User Image" width="100%">
           </div>
         </div>
 
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="editButtonClick()">
           Edit
         </button>
       </div>
@@ -40,14 +40,44 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form (ngSubmit)="onSubmit()" [formGroup]="userEditForm">
       <div class="modal-body">
-        Hide this modal and show the first with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-          Back to first
-        </button>
-      </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Password</label>
+            <input type="text" class="form-control" formControlName="password" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Dob</label>
+            <input type="text" class="form-control" formControlName="dob" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Image</label>
+            <input type="text" class="form-control" formControlName="image" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">
+            Edit
+          </button>
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button">
+            Back to Info
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

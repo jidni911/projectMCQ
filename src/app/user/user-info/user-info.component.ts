@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { user } from 'models/user';
+import { UserServiceService } from 'src/app/service/user-service.service';
 
 @Component({
   selector: 'app-user-info',
@@ -8,6 +11,30 @@ import { user } from 'models/user';
 })
 export class UserInfoComponent {
 
-  @Input() selectingUser !: user;
+  constructor(private userService: UserServiceService,
+    private router : Router
+  ) { }
 
+  @Input() selectingUser : user = {id : 0,name : "",email : "",password : "",image: "", dob: ""};
+  @Output() notifyParent: EventEmitter<void> = new EventEmitter();
+  editButtonClick() {
+    this.userEditForm.setValue(this.selectingUser);
+  }
+  userEditForm: FormGroup = new FormGroup({
+    id: new FormControl(this.selectingUser?.id),
+    name: new FormControl(this.selectingUser?.name),
+    email: new FormControl(this.selectingUser?.email),
+    password: new FormControl(this.selectingUser?.password),
+    dob: new FormControl(this.selectingUser?.dob),
+    image: new FormControl(this.selectingUser?.image)
+  })
+
+
+  onSubmit() {
+    this.userService.updateUser(this.userEditForm.value.id, this.userEditForm.value).subscribe((r)=>{
+      // document.getElementById('closeModal')?.click();
+        // this.router.navigateByUrl('user');
+        this.notifyParent.emit();
+    })
+  }
 }
