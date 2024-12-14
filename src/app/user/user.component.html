@@ -17,6 +17,7 @@ background-position: top center;
           <th>Password</th>
           <th>DoB</th>
           <th>Image</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
@@ -27,7 +28,9 @@ background-position: top center;
           <td>{{ user.password }}</td>
           <td>{{ user.dob }}</td>
           <td><img [src]="user.image" alt="User Image" width="50" height="50"></td>
-
+          <td>
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="viewUser(user)">View</a>
+          </td>
         </tr>
       </tbody>
       <tfoot>
@@ -37,4 +40,5 @@ background-position: top center;
   </div>
 
 
+  <app-user-info [selectingUser]="selecterUser"></app-user-info>
 </div>

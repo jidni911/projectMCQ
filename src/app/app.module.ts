@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { McqComponent } from './mcq/mcq.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserInfoComponent } from './user/user-info/user-info.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     UserComponent,
     McqComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
