@@ -11,19 +11,15 @@ export class UserComponent implements OnInit {
 
 
     allUser!: user[]
-    
+
     constructor(private userService: UserServiceService) { }
 
     ngOnInit(): void {
-        this.userService.getAllUsers().subscribe(
-            (data) => {
-                this.allUser = data;
-                console.log(this.allUser);
-            },
-            (error) => {
-                console.error('Error fetching users', error);
-            }
-        );
+        this.userService.getAllUsers().subscribe((res)=>{
+          console.log(res);
+
+          this.allUser = res;
+        })
     }
     bgimageurl = 'assets/images/userbg.png';
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { user } from 'models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +14,16 @@ export class UserServiceService {
 
   // Get all users
   getAllUsers() {
-    return this.http.get(this.path);
+    return this.http.get<user[]>(this.path);
   }
 
   // Get user by ID
-  getUserById(id: number){
+  getUserById(id: number) {
     return this.http.get(`${this.path}${id}`);
   }
 
   // Add a new user
-  addUser(user: any){
+  addUser(user: any) {
     return this.http.post(this.path, user);
   }
 

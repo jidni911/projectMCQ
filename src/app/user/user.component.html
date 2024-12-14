@@ -2,7 +2,6 @@
  background-repeat: no-repeat;
 background-size: cover;
 background-position: top center;
-height: 100vh;
 ">
 
 
@@ -25,19 +24,10 @@ height: 100vh;
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.dob | date:'shortDate' }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.dob }}</td>
           <td><img [src]="user.image" alt="User Image" width="50" height="50"></td>
 
-        </tr>
-        <tr class="table-primary">
-          <td scope="row">Item</td>
-          <td>Item</td>
-          <td>Item</td>
-        </tr>
-        <tr class="table-primary">
-          <td scope="row">Item</td>
-          <td>Item</td>
-          <td>Item</td>
         </tr>
       </tbody>
       <tfoot>
