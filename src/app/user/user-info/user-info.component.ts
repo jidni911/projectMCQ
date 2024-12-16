@@ -12,13 +12,20 @@ import { UserServiceService } from 'src/app/service/user-service.service';
 export class UserInfoComponent {
 
   constructor(private userService: UserServiceService,
-    private router : Router
+    private router: Router
   ) { }
 
-  @Input() selectingUser : user = {id : 0,name : "",email : "",password : "",image: "", dob: ""};
+  @Input() selectingUser: user = { id: 0, name: "", email: "", password: "", image: "", dob: "" };
   @Output() notifyParent: EventEmitter<void> = new EventEmitter();
-  editButtonClick() {
+  putUser(user: user) {
+    this.selectingUser = user;
+    this.editButtonClick();
+    setTimeout(() => {
+      console.log(this.selectingUser);
 
+    }, 1000);
+  }
+  editButtonClick() {
     this.userEditForm.setValue(this.selectingUser);
   }
   userEditForm: FormGroup = new FormGroup({
@@ -32,10 +39,10 @@ export class UserInfoComponent {
 
 
   onSubmit() {
-    this.userService.updateUser(this.userEditForm.value.id, this.userEditForm.value).subscribe((r)=>{
+    this.userService.updateUser(this.userEditForm.value.id, this.userEditForm.value).subscribe((r) => {
       // document.getElementById('closeModal')?.click();
-        // this.router.navigateByUrl('user');
-        this.notifyParent.emit();
+      // this.router.navigateByUrl('user');
+      this.notifyParent.emit();
     })
   }
 }
