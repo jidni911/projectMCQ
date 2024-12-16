@@ -1,6 +1,52 @@
-<div style="background-image: url({{bgimageurl}});
- background-repeat: no-repeat;
-background-size: cover;
-background-position: top center;
-height: 100vh;">
+<div
+  [style.backgroundImage]="'url(' + bgimageurl + ')'"
+  class="d-flex flex-column text-white bg-overlay background"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  ">
+  <!-- Hero Section -->
+  <div class="container my-auto text-center">
+    <h1 class="display-4 fw-bold mb-3">Welcome to MCQ Master</h1>
+    <p class="lead mb-4">
+      Create and take quizzes, track your progress, and challenge your knowledge.
+    </p>
+
+    <div class="container mt-5">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h3 class="display-6 fw-bold">50+</h3>
+          <p>Quizzes Created</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="display-6 fw-bold">1000+</h3>
+          <p>Questions Answered</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="display-6 fw-bold">85%</h3>
+          <p>Average Score</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Call-to-Action Buttons -->
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+      <a routerLink="/add-mcq" class="btn btn-primary btn-lg px-4">Add MCQs</a>
+      <a routerLink="/take-test" class="btn btn-outline-light btn-lg px-4">Take a Test</a>
+      <a routerLink="/results" class="btn btn-success btn-lg px-4">View Results</a>
+    </div>
+  </div>
+
+  <!-- Authentication Buttons -->
+  <div class="container text-center mt-3">
+    <p>New here? <a routerLink="/sign-up" class="text-warning">Sign Up</a> or <a routerLink="/sign-in" class="text-warning">Sign In</a></p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="container-fluid mt-auto py-3 bg-dark text-light text-center">
+    <p class="mb-0">&copy; {{ Date.getFullYear() }} MCQ Master. All Rights Reserved.</p>
+  </footer>
 </div>

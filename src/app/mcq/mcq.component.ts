@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class McqComponent {
 
+  bgimageurl = 'assets/images/mcqbg.png';
+
 }

@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
   bgimageurl = 'assets/images/homebg.png';
+Date = new Date();
+
+
+  ngOnInit(): void {
+    this.startImageRotation();
+  }
+  images: string[] = ['captains', 'masud', 'sharmin', 'sumon', 'takingpic', 'tarik', 'trio', 'trio2'];
+
+  startImageRotation(): void {
+    setInterval(() => {
+      // Generate a random index to select a random image from the array
+      const randomIndex = Math.floor(Math.random() * this.images.length);
+      this.bgimageurl = 'assets/images/'+this.images[randomIndex]+'.png';
+    }, 2000); // Change image every 1 second
+  }
+
 
 }
