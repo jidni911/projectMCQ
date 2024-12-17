@@ -18,13 +18,13 @@ export class AppComponent implements OnInit {
 
     title = 'projectmcq';
 
-    currentUser: user | null = null;
+    static currentUser: user | null = null;
     getCurrentUser(): user {
-        return this.currentUser == null ? { id: 0, name: "", email: "", password: "", image: "", dob: "" } : this.currentUser;
+        return AppComponent.currentUser == null ? { id: 0, name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
     }
 
     isLoggedin(): boolean {
-        return this.currentUser != null;
+        return AppComponent.currentUser != null;
     }
     loggingButtonDisabled: boolean = false;
 
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
         this.userService.logInUser(this.loggingform.value.email, this.loggingform.value.password).subscribe((loggedInUser) => {
             if (loggedInUser) {
                 // alert('User logged in after delay:' + loggedInUser);
-                this.currentUser = loggedInUser;
+                AppComponent.currentUser = loggedInUser;
                 this.userInfoComponent.putUser(this.getCurrentUser());
                 document.getElementById('bsModalCloseButton')?.click();
             } else {

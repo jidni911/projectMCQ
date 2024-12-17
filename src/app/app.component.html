@@ -28,7 +28,7 @@
         </button>
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
             [hidden]="!isLoggedin()" (click)="viewUser()">
-            {{currentUser?.name}}
+            {{getCurrentUser.name}}
         </button>
 
     </div>
@@ -58,13 +58,13 @@
                             <label for="logginginMail" class="form-label">Email</label>
                             <input type="email" class="form-control" name="logginginMail" id="logginginMail"
                                 formControlName="email" aria-describedby="logginginemailHelpId" autocomplete="email"
-                                placeholder="abc@mail.com" />
+                                placeholder="abc@mail.com" required/>
                             <small id="logginginemailHelpId" class="form-text text-muted">Enter Email</small>
                         </div>
                         <div class="mb-3">
                             <label for="logginginPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" name="logginginPassword" id="logginginPassword" autocomplete="current-password"
-                                formControlName="password" placeholder="" />
+                                formControlName="password" placeholder="" required />
                         </div>
 
                     </div>
@@ -94,7 +94,7 @@
 </script>
 
 <div class="">
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
 </div>
 
 
