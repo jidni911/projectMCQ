@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserCreateComponent } from './user/user-create/user-create.component';
+import { CreatemcqComponent } from './mcq/createmcq/createmcq.component';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
     McqComponent,
     NotFoundComponent,
     UserInfoComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    CreatemcqComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

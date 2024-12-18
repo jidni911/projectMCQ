@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { user } from 'models/user';
 import { UserServiceService } from './service/user-service.service';
 import { UserInfoComponent } from './user/user-info/user-info.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -11,16 +12,21 @@ import { UserInfoComponent } from './user/user-info/user-info.component';
 })
 export class AppComponent implements OnInit {
 
-    constructor(private userService: UserServiceService) { }
+    constructor(private userService: UserServiceService, private router:Router) { }
     ngOnInit(): void {
 
     }
 
-    title = 'projectmcq';
+    title = 'MCQ Master';
+    currentTab = 'home';
+    tabClicked(tab: string) {
+        this.currentTab = tab;
+        this.router.navigateByUrl(tab);
+    }
 
     static currentUser: user | null = null;
     getCurrentUser(): user {
-        return AppComponent.currentUser == null ? { id: 0, name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
+        return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
     }
 
     isLoggedin(): boolean {
@@ -51,7 +57,7 @@ export class AppComponent implements OnInit {
     @ViewChild(UserInfoComponent) userInfoComponent!: UserInfoComponent;
     viewUser() {
         setTimeout(() => {
-          this.userInfoComponent.putUser(this.getCurrentUser());
+            this.userInfoComponent.putUser(this.getCurrentUser());
         }, 200);
     }
 

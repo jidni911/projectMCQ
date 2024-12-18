@@ -8,8 +8,8 @@ import { user } from 'models/user';
 })
 export class UserServiceService {
 
-    // private path = "http://localhost:3000/users/";
-    private path = "http://192.168.20.135:3000/users/";
+    private path = "http://localhost:3000/users/";
+    // private path = "http://192.168.20.135:3000/users/";
 
     constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class UserServiceService {
     }
 
     // Get user by ID
-    getUserById(id: number) {
+    getUserById(id: string) {
         return this.http.get(`${this.path}${id}`);
     }
 
@@ -29,12 +29,12 @@ export class UserServiceService {
     }
 
     // Update user by ID
-    updateUser(id: number, user: any) {
+    updateUser(id: string, user: any) {
         return this.http.put(`${this.path}${id}`, user);
     }
 
     // Delete user by ID
-    deleteUser(id: number) {
+    deleteUser(id: string) {
         return this.http.delete(`${this.path}${id}`);
     }
 

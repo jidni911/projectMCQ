@@ -42,9 +42,11 @@
     <div class="container text-center mt-3" [hidden]="isLoggedin()">
         <p>
             New here?
-            <a routerLink="/sign-up" class="text-warning">Sign Up</a>
+            <a routerLink="/sign-up" class="text-warning" data-bs-toggle="modal" data-bs-target="#addUserModal">Sign
+                Up</a>
             or
-            <a routerLink="/sign-in" class="text-warning" data-bs-toggle="modal" data-bs-target="#loggingModal">Sign In</a>
+            <a routerLink="/sign-in" class="text-warning" data-bs-toggle="modal" data-bs-target="#loggingModal">Sign
+                In</a>
         </p>
     </div>
 
@@ -53,3 +55,5 @@
         <p class="mb-0">&copy; {{ Date.getFullYear() }} MCQ Master. All Rights Reserved.</p>
     </footer>
 </div>
+
+<app-user-create></app-user-create>

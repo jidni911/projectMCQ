@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Add New MCQ</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #mcqForm="ngForm">
+        <!-- Question -->
+        <div class="mb-3">
+          <label for="question" class="form-label fw-bold">Question</label>
+          <textarea
+            class="form-control"
+            id="question"
+            name="question"
+            rows="3"
+            required
+            [(ngModel)]="mcq.question"></textarea>
+        </div>
+
+        <!-- Options -->
+        <div class="mb-3">
+          <label for="options" class="form-label fw-bold">Options</label>
+          <div *ngFor="let option of mcq.options; let i = index" class="input-group mb-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Option {{ i + 1 }}"
+              [(ngModel)]="mcq.options[i]"
+              name="option{{ i }}"
+              required />
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              (click)="removeOption(i)">
+              Remove
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline-success" (click)="addOption()">Add Option</button>
+        </div>
+
+        <!-- Answers -->
+        <div class="mb-3">
+          <label for="answers" class="form-label fw-bold">Correct Answers (Indexes)</label>
+          <input
+            type="text"
+            class="form-control"
+            id="answers"
+            name="answers"
+            placeholder="Comma-separated (e.g., 0,2 for options 1 and 3)"
+            required
+            [(ngModel)]="mcq.answers">
+        </div>
+
+        <!-- Credit -->
+        <div class="mb-3">
+          <label for="credit" class="form-label fw-bold">Credit</label>
+          <input
+            type="number"
+            class="form-control"
+            id="credit"
+            name="credit"
+            min="1"
+            required
+            [(ngModel)]="mcq.credit">
+        </div>
+
+        <!-- Topic -->
+        <div class="mb-3">
+          <label for="topic" class="form-label fw-bold">Topic</label>
+          <input
+            type="text"
+            class="form-control"
+            id="topic"
+            name="topic"
+            required
+            [(ngModel)]="mcq.topic">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-4" [disabled]="!mcqForm.valid">Add MCQ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -15,7 +15,7 @@ export class UserInfoComponent {
     private router: Router
   ) { }
 
-  @Input() selectingUser: user = { id: 0, name: "", email: "", password: "", image: "", dob: "" };
+  @Input() selectingUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "" };
   @Output() notifyParent: EventEmitter<void> = new EventEmitter();
   putUser(user: user) {
     this.selectingUser = user;

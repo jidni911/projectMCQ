@@ -1,9 +1,9 @@
 export interface mcq{
-  id : number,
+  id : string,
   question : string,
   options : string[],
   answers: number[],
-  credit : number,
+  credit : string,
   topic : string
 }
 

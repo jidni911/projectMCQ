@@ -11,9 +11,10 @@ import { UserInfoComponent } from './user-info/user-info.component';
 export class UserComponent implements OnInit {
 
   bgimageurl = 'assets/images/userbg.png';
+  
 
   allUser!: user[];
-  selecterUser: user = { id: 0, name: "", email: "", password: "", image: "", dob: "" };
+  selecterUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "" };
 
   @ViewChild(UserInfoComponent) userInfoComponent!: UserInfoComponent;
 
@@ -32,7 +33,7 @@ export class UserComponent implements OnInit {
       this.userInfoComponent.editButtonClick();
     }, 200)
   }
-  deleteUser(id: number) {
+  deleteUser(id: string) {
     if(window.confirm("Are you sure you want to delete this?")){
       this.userService.deleteUser(id).subscribe((s)=>{
         alert('User Deleted');

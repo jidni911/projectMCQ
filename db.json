@@ -167,6 +167,344 @@
       "password": "qrqettertet",
       "dob": "28-04-2000",
       "image": "https://cdn.pixabay.com/photo/2023/11/06/09/43/lotus-8369252_1280.jpg"
+    },
+    {
+      "id": "a2c3",
+      "name": null,
+      "email": null,
+      "password": null,
+      "dob": null,
+      "image": null
     }
+  ],
+  "mcqs": [
+    {
+      "id": 1,
+      "question": "What is the capital of France?",
+      "options": [
+        "Berlin",
+        "Madrid",
+        "Paris",
+        "Rome"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": 5,
+      "topic": "Geography"
+    },
+    {
+      "id": 2,
+      "question": "Which are prime numbers?",
+      "options": [
+        "2",
+        "4",
+        "5",
+        "9"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Mathematics"
+    },
+    {
+      "id": 3,
+      "question": "Who wrote 'Hamlet'?",
+      "options": [
+        "Mark Twain",
+        "William Shakespeare",
+        "Charles Dickens",
+        "Jane Austen"
+      ],
+      "answers": [
+        1
+      ],
+      "credit": 5,
+      "topic": "Literature"
+    },
+    {
+      "id": 4,
+      "question": "What are the colors in the flag of Germany?",
+      "options": [
+        "Black",
+        "Red",
+        "Green",
+        "Yellow"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "credit": 10,
+      "topic": "History"
+    },
+    {
+      "id": 5,
+      "question": "Which programming languages are statically typed?",
+      "options": [
+        "Python",
+        "Java",
+        "C#",
+        "JavaScript"
+      ],
+      "answers": [
+        1,
+        2
+      ],
+      "credit": 10,
+      "topic": "Technology"
+    },
+    {
+      "id": 6,
+      "question": "What is the speed of light?",
+      "options": [
+        "3x10^8 m/s",
+        "3x10^6 m/s",
+        "3x10^5 m/s",
+        "3x10^7 m/s"
+      ],
+      "answers": [
+        0
+      ],
+      "credit": 5,
+      "topic": "Physics"
+    },
+    {
+      "id": 7,
+      "question": "Which planets are gas giants?",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "answers": [
+        2,
+        3
+      ],
+      "credit": 10,
+      "topic": "Astronomy"
+    },
+    {
+      "id": 8,
+      "question": "Who discovered gravity?",
+      "options": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Nikola Tesla"
+      ],
+      "answers": [
+        1
+      ],
+      "credit": 5,
+      "topic": "Physics"
+    },
+    {
+      "id": 9,
+      "question": "Which elements are noble gases?",
+      "options": [
+        "Helium",
+        "Oxygen",
+        "Neon",
+        "Nitrogen"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Chemistry"
+    },
+    {
+      "id": 10,
+      "question": "Which continents are entirely in the Southern Hemisphere?",
+      "options": [
+        "Antarctica",
+        "Africa",
+        "Australia",
+        "South America"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Geography"
+    },
+    {
+      "id": 11,
+      "question": "Who painted the Mona Lisa?",
+      "options": [
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Leonardo da Vinci",
+        "Claude Monet"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": 5,
+      "topic": "Art"
+    },
+    {
+      "id": 12,
+      "question": "Which animals are mammals?",
+      "options": [
+        "Dog",
+        "Snake",
+        "Elephant",
+        "Crocodile"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Biology"
+    },
+    {
+      "id": 13,
+      "question": "What is the boiling point of water at sea level?",
+      "options": [
+        "90°C",
+        "100°C",
+        "110°C",
+        "120°C"
+      ],
+      "answers": [
+        1
+      ],
+      "credit": 5,
+      "topic": "Chemistry"
+    },
+    {
+      "id": 14,
+      "question": "Which are renewable energy sources?",
+      "options": [
+        "Solar",
+        "Coal",
+        "Wind",
+        "Oil"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Environment"
+    },
+    {
+      "id": 15,
+      "question": "What is the largest ocean on Earth?",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": 5,
+      "topic": "Geography"
+    },
+    {
+      "id": 16,
+      "question": "Which are Abrahamic religions?",
+      "options": [
+        "Hinduism",
+        "Christianity",
+        "Judaism",
+        "Islam"
+      ],
+      "answers": [
+        1,
+        2,
+        3
+      ],
+      "credit": 10,
+      "topic": "Religion"
+    },
+    {
+      "id": 17,
+      "question": "Who was the first president of the United States?",
+      "options": [
+        "Abraham Lincoln",
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams"
+      ],
+      "answers": [
+        1
+      ],
+      "credit": 5,
+      "topic": "History"
+    },
+    {
+      "id": 18,
+      "question": "What are the primary colors?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answers": [
+        0,
+        2,
+        3
+      ],
+      "credit": 10,
+      "topic": "Art"
+    },
+    {
+      "id": 19,
+      "question": "Which devices are output devices?",
+      "options": [
+        "Printer",
+        "Keyboard",
+        "Monitor",
+        "Mouse"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "credit": 10,
+      "topic": "Technology"
+    },
+    {
+      "id": 20,
+      "question": "What is the chemical symbol for water?",
+      "options": [
+        "H2O",
+        "O2",
+        "CO2",
+        "HO"
+      ],
+      "answers": [
+        0
+      ],
+      "credit": 5,
+      "topic": "Chemistry"
+    },
+    {
+      "id": "",
+      "question": "ljn",
+      "options": [
+        "j",
+        "j"
+      ],
+      "answers": "0",
+      "credit": 9,
+      "topic": "h"
+    }
+  ],
+  "admins": [
+    "jidni911"
   ]
 }
