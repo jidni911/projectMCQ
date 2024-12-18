@@ -159,6 +159,14 @@
       "password": "amelia5555",
       "dob": "1996-04-14",
       "image": "https://randomuser.me/api/portraits/women/20.jpg"
+    },
+    {
+      "id": "4a85",
+      "name": "Sarmin",
+      "email": "ss@gmail.com",
+      "password": "qrqettertet",
+      "dob": "28-04-2000",
+      "image": "https://cdn.pixabay.com/photo/2023/11/06/09/43/lotus-8369252_1280.jpg"
     }
   ]
 }

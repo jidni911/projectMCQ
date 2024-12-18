@@ -28,7 +28,7 @@
         </button>
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
             [hidden]="!isLoggedin()" (click)="viewUser()">
-            {{getCurrentUser.name}}
+            {{getCurrentUser().name}}
         </button>
 
     </div>
