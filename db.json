@@ -505,6 +505,6 @@
     }
   ],
   "admins": [
-    "jidni911"
+    {"key":"jidni911"}
   ]
 }

@@ -8,8 +8,8 @@ import { user } from 'models/user';
 })
 export class UserServiceService {
 
-    private path = "http://localhost:3000/users/";
-    // private path = "http://192.168.20.135:3000/users/";
+    // private path = "http://localhost:3000/users/";
+    private path = "http://192.168.20.135:3000/users/";
 
     constructor(private http: HttpClient) { }
 

@@ -9,8 +9,8 @@ export class McqService {
 
 
 
-  private path = "http://localhost:3000/mcqs/";
-  // private path = "http://192.168.20.135:3000/mcqs/";
+  // private path = "http://localhost:3000/mcqs/";
+  private path = "http://192.168.20.135:3000/mcqs/";
 
   constructor(private http: HttpClient) { }
 
