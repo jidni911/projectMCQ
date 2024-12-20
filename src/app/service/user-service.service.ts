@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, delay, map, Observable, of } from 'rxjs';
+import { catchError, delay, generate, map, Observable, of } from 'rxjs';
 import { user } from 'models/user';
 
 @Injectable({
@@ -41,9 +41,11 @@ export class UserServiceService {
     logInUser(email: string, password: string): Observable<user | null> {
         return this.getAllUsers().pipe(
           map((allUsers: user[]) => {
-            return allUsers.find(user => user.email == email && user.password == password) || null;
+            let user = allUsers.find(user => user.email == email && user.password == password) || null
+
+            return user;
           }),
-          delay(3000), // Introduce a 3-second delay
+          // delay(3000), // Introduce a 3-second delay
           catchError((error) => {
             console.error('Error fetching users:', error);
             return of(null); // Return null in case of an error
