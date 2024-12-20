@@ -26,7 +26,13 @@ export class McqService {
 
   // Add a new user
   add(mcq: mcq) {
-    return this.http.post(this.path, mcq);
+    return this.http.post(this.path, {
+      "question": mcq.question,
+      "options": mcq.options,
+      "answers":mcq.answers,
+      "credit": mcq.credit,
+      "topic": mcq.topic
+    });
   }
 
   // Update user by ID

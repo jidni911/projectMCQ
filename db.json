@@ -167,14 +167,6 @@
       "password": "qrqettertet",
       "dob": "28-04-2000",
       "image": "https://cdn.pixabay.com/photo/2023/11/06/09/43/lotus-8369252_1280.jpg"
-    },
-    {
-      "id": "a2c3",
-      "name": null,
-      "email": null,
-      "password": null,
-      "dob": null,
-      "image": null
     }
   ],
   "mcqs": [
@@ -491,17 +483,6 @@
       ],
       "credit": 5,
       "topic": "Chemistry"
-    },
-    {
-      "id": "",
-      "question": "ljn",
-      "options": [
-        "j",
-        "j"
-      ],
-      "answers": "0",
-      "credit": 9,
-      "topic": "h"
     }
   ],
   "admins": [
@@ -512,12 +493,7 @@
   ],
   "tokens": [
     {
-      "id": "1",
-      "mail": "",
-      "pass": ""
-    },
-    {
-      "id": "6139",
+      "id": "b671",
       "mail": "john.doe@example.com",
       "pass": "password123"
     }

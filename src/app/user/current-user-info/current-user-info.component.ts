@@ -22,6 +22,11 @@ export class CurrentUserInfoComponent {
     return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
   }
 
+  getCurrentToken(){
+    let t =localStorage.getItem('token');
+    return t?t:"no token";
+  }
+
   editButtonClick() {
     this.userEditForm.setValue(this.getCurrentUser());
   }
