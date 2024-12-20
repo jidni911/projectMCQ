@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { CreatemcqComponent } from './mcq/createmcq/createmcq.component';
 import { TestComponent } from './test/test.component';
+import { CurrentUserInfoComponent } from './user/current-user-info/current-user-info.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TestComponent } from './test/test.component';
     UserInfoComponent,
     UserCreateComponent,
     CreatemcqComponent,
-    TestComponent
+    TestComponent,
+    CurrentUserInfoComponent
   ],
   imports: [
     BrowserModule,

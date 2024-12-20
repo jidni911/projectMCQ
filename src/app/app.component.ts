@@ -35,16 +35,14 @@ export class AppComponent implements OnInit {
     loggingButtonDisabled: boolean = false;
 
     loggingform: FormGroup = new FormGroup({
-        email: new FormControl(''),
-        password: new FormControl('')
+        email: new FormControl('john.doe@example.com'),
+        password: new FormControl('password123')
     })
     logginginFormSubmit() {
         this.loggingButtonDisabled = true;
         this.userService.logInUser(this.loggingform.value.email, this.loggingform.value.password).subscribe((loggedInUser) => {
             if (loggedInUser) {
-                // alert('User logged in after delay:' + loggedInUser);
                 AppComponent.currentUser = loggedInUser;
-                this.userInfoComponent.putUser(this.getCurrentUser());
                 document.getElementById('bsModalCloseButton')?.click();
             } else {
                 // alert('Invalid email or password');
@@ -54,11 +52,11 @@ export class AppComponent implements OnInit {
 
     }
 
-    @ViewChild(UserInfoComponent) userInfoComponent!: UserInfoComponent;
-    viewUser() {
-        setTimeout(() => {
-            this.userInfoComponent.putUser(this.getCurrentUser());
-        }, 200);
-    }
+    // @ViewChild(UserInfoComponent) userInfoComponent!: UserInfoComponent;
+    // viewUser() {
+    //     setTimeout(() => {
+    //         this.userInfoComponent.putUser(this.getCurrentUser());
+    //     }, 200);
+    // }
 
 }

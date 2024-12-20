@@ -179,7 +179,7 @@
   ],
   "mcqs": [
     {
-      "id": 1,
+      "id": "1",
       "question": "What is the capital of France?",
       "options": [
         "Berlin",
@@ -194,7 +194,7 @@
       "topic": "Geography"
     },
     {
-      "id": 2,
+      "id": "2",
       "question": "Which are prime numbers?",
       "options": [
         "2",
@@ -210,7 +210,7 @@
       "topic": "Mathematics"
     },
     {
-      "id": 3,
+      "id": "3",
       "question": "Who wrote 'Hamlet'?",
       "options": [
         "Mark Twain",
@@ -225,7 +225,7 @@
       "topic": "Literature"
     },
     {
-      "id": 4,
+      "id": "4",
       "question": "What are the colors in the flag of Germany?",
       "options": [
         "Black",
@@ -242,7 +242,7 @@
       "topic": "History"
     },
     {
-      "id": 5,
+      "id": "5",
       "question": "Which programming languages are statically typed?",
       "options": [
         "Python",
@@ -258,7 +258,7 @@
       "topic": "Technology"
     },
     {
-      "id": 6,
+      "id": "6",
       "question": "What is the speed of light?",
       "options": [
         "3x10^8 m/s",
@@ -273,7 +273,7 @@
       "topic": "Physics"
     },
     {
-      "id": 7,
+      "id": "7",
       "question": "Which planets are gas giants?",
       "options": [
         "Earth",
@@ -289,7 +289,7 @@
       "topic": "Astronomy"
     },
     {
-      "id": 8,
+      "id": "8",
       "question": "Who discovered gravity?",
       "options": [
         "Albert Einstein",
@@ -304,7 +304,7 @@
       "topic": "Physics"
     },
     {
-      "id": 9,
+      "id": "9",
       "question": "Which elements are noble gases?",
       "options": [
         "Helium",
@@ -320,7 +320,7 @@
       "topic": "Chemistry"
     },
     {
-      "id": 10,
+      "id": "10",
       "question": "Which continents are entirely in the Southern Hemisphere?",
       "options": [
         "Antarctica",
@@ -336,7 +336,7 @@
       "topic": "Geography"
     },
     {
-      "id": 11,
+      "id": "11",
       "question": "Who painted the Mona Lisa?",
       "options": [
         "Vincent van Gogh",
@@ -351,7 +351,7 @@
       "topic": "Art"
     },
     {
-      "id": 12,
+      "id": "12",
       "question": "Which animals are mammals?",
       "options": [
         "Dog",
@@ -367,7 +367,7 @@
       "topic": "Biology"
     },
     {
-      "id": 13,
+      "id": "13",
       "question": "What is the boiling point of water at sea level?",
       "options": [
         "90°C",
@@ -382,7 +382,7 @@
       "topic": "Chemistry"
     },
     {
-      "id": 14,
+      "id": "14",
       "question": "Which are renewable energy sources?",
       "options": [
         "Solar",
@@ -398,7 +398,7 @@
       "topic": "Environment"
     },
     {
-      "id": 15,
+      "id": "15",
       "question": "What is the largest ocean on Earth?",
       "options": [
         "Atlantic Ocean",
@@ -413,7 +413,7 @@
       "topic": "Geography"
     },
     {
-      "id": 16,
+      "id": "16",
       "question": "Which are Abrahamic religions?",
       "options": [
         "Hinduism",
@@ -430,7 +430,7 @@
       "topic": "Religion"
     },
     {
-      "id": 17,
+      "id": "17",
       "question": "Who was the first president of the United States?",
       "options": [
         "Abraham Lincoln",
@@ -445,7 +445,7 @@
       "topic": "History"
     },
     {
-      "id": 18,
+      "id": "18",
       "question": "What are the primary colors?",
       "options": [
         "Red",
@@ -462,7 +462,7 @@
       "topic": "Art"
     },
     {
-      "id": 19,
+      "id": "19",
       "question": "Which devices are output devices?",
       "options": [
         "Printer",
@@ -478,7 +478,7 @@
       "topic": "Technology"
     },
     {
-      "id": 20,
+      "id": "20",
       "question": "What is the chemical symbol for water?",
       "options": [
         "H2O",
@@ -505,6 +505,9 @@
     }
   ],
   "admins": [
-    {"key":"jidni911"}
+    {
+      "key": "jidni911",
+      "id": "d6e9"
+    }
   ]
 }
