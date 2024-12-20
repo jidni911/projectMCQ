@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { token } from 'models/teken';
+import {  SERVER_URL } from '../global';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class TokenService {
 
 
 
-  private path = "http://localhost:3000/tokens/";
+  private path = SERVER_URL+"/tokens/";
   // private path = "http://192.168.20.135:3000/users/";
 
   constructor(private http: HttpClient) { }

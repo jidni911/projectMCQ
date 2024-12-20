@@ -15,6 +15,7 @@
             <p><strong>Name:</strong> {{ selectingUser.name }}</p>
             <p><strong>Email:</strong> {{ selectingUser.email }}</p>
             <p><strong>Date of Birth:</strong> {{ selectingUser.dob }}</p>
+            <p><strong>Role</strong> {{ selectingUser.role }}</p>
           </div>
           <div class="col">
             <img *ngIf="selectingUser?.image" [src]="selectingUser.image" alt="User Image" width="100%">
@@ -60,6 +61,11 @@
           <div class="mb-3">
             <label for="" class="form-label">Dob</label>
             <input type="text" class="form-control" formControlName="dob" aria-describedby="helpId" placeholder="" />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Role</label>
+            <input type="text" class="form-control" formControlName="role" aria-describedby="helpId" placeholder="" />
             <small id="helpId" class="form-text text-muted">Help text</small>
           </div>
           <div class="mb-3">

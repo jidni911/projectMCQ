@@ -106,4 +106,4 @@
 
 
 <!-- <app-user-info [selectingUser]="getCurrentUser()" (notifyParent)="ngOnInit()"></app-user-info> -->
-<app-current-user-info (getCurrentUser)="getCurrentUser()"></app-current-user-info>
+<app-current-user-info (getCurrentUser)="getCurrentUser()" (notifyParent)="tryLogin($event)"></app-current-user-info>

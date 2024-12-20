@@ -15,7 +15,7 @@ export class UserInfoComponent {
     private router: Router
   ) { }
 
-  @Input() selectingUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "" };
+  @Input() selectingUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "", role : "" };
   @Output() notifyParent: EventEmitter<void> = new EventEmitter();
   putUser(user: user) {
     this.selectingUser = user;
@@ -34,7 +34,8 @@ export class UserInfoComponent {
     email: new FormControl(this.selectingUser?.email),
     password: new FormControl(this.selectingUser?.password),
     dob: new FormControl(this.selectingUser?.dob),
-    image: new FormControl(this.selectingUser?.image)
+    image: new FormControl(this.selectingUser?.image),
+    role: new FormControl(this.selectingUser?.role)
   })
 
 

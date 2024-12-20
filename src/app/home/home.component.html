@@ -8,6 +8,7 @@
     <!-- Hero Section -->
     <div class="container my-auto text-center">
         <h1 class="display-4 fw-bold mb-3">Welcome to MCQ Master</h1>
+        <h2 class=" fw-bold mb-3" *ngIf="isLoggedin">{{getCurrentUser().name}}</h2>
         <p class="lead mb-4">
             Create and take quizzes, track your progress, and challenge your knowledge.
         </p>
@@ -32,8 +33,8 @@
 
         <!-- Call-to-Action Buttons -->
         <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-            <a routerLink="/add-mcq" class="btn btn-primary btn-lg px-4">Add MCQs</a>
-            <a routerLink="/take-test" class="btn btn-outline-light btn-lg px-4">Take a Test</a>
+            <a routerLink="/mcq/create" class="btn btn-primary btn-lg px-4">Add MCQs</a>
+            <a routerLink="/mcq/quiz" class="btn btn-outline-light btn-lg px-4">Take a Test</a>
             <a routerLink="/results" class="btn btn-success btn-lg px-4">View Results</a>
         </div>
     </div>

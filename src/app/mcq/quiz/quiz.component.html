@@ -1,0 +1,82 @@
+<div class="container py-5">
+  <div *ngIf="step === 1" class="card shadow-sm">
+    <!-- Step 1: Quiz Parameters -->
+    <div class="card-header bg-primary text-white">
+      <h2>What do you want, {{getCurrentUser().name}} ?</h2>
+    </div>
+    <div class="card-body">
+      <div>
+        <div class="mb-3">
+          <label for="numQuestions" class="form-label">Number of Questions:</label>
+          <input type="number" id="numQuestions" [(ngModel)]="numQuestions" name="numQuestions" class="form-control"
+            required>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="topic" class="form-label mt-3">Topic:</label>
+              <div class="list-group" id="topic">
+                <div *ngFor="let topic of allTopics">
+                  <input type="checkbox" (change)="updateChoices()" name="topics" class="btn-check form-check-input"
+                    id="{{topic}}" autocomplete="off">
+                  <label class="btn btn-outline-primary list-group-item my-1" for="{{topic}}">{{topic}}</label>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <label for="credit" class="form-label mt-3">Credits:</label>
+              <div class="list-group" id="credit">
+                <div *ngFor="let credit of allCredits">
+                  <input type="checkbox" (change)="updateChoices()" name="credits" class="btn-check form-check-input"
+                    id="{{credit+''}}" autocomplete="off">
+                  <label class="btn btn-outline-primary list-group-item my-1"
+                    for="{{credit}}">{{getUserName(credit)}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button (click)="startQuiz()" class="btn btn-primary w-100">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="step === 2" class=" shadow-sm mt-4 ">
+    <!-- Step 2: Actual Quiz -->
+    <div class="card-header bg-success text-white">
+      <h2>Quiz</h2>
+    </div>
+    <div *ngFor="let question of questions; let i = index" class="mb-1 card">
+      <p class="card-header row">
+        <strong class="col-6">{{ i + 1 }}. {{ question.question }}</strong>
+        <span class="col-3">Topic: {{question.topic}}</span>
+        <span class="col-3 text-end">Credit: {{getUserName(question.credit)}}</span>
+      </p>
+      <div class="list-group list-group-flush">
+        <div *ngFor="let option of question.options; let j = index" class="form-check list-group-item ps-5  list-group-item-action d-flex">
+          <input type="radio" [name]="'question' + i" class="form-check-input" id="option{{i}}{{option}}">
+          <label class="form-check-label w-100" [for]="'option' + i + option">{{ option }}</label>
+          <span  *ngIf="showAnswer">{{j+1}}</span>
+
+        </div>
+      </div>
+      <p class="card-footer" *ngIf="showAnswer">Answer : {{question.answers}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button routerLink="/mcq" class="btn btn-primary " >Cancel Test</button>
+    <button (click)="submitQuiz()" class="btn btn-success " *ngIf="!showAnswer">Submit Quiz</button>
+    <button (click)="showAnsers()" class="btn btn-warning ">Show Answer</button>
+    </div>
+  </div>
+
+  <div *ngIf="step === 3" class="card">
+    <!-- Step 3: Quiz Result -->
+    <div class="card-header">
+      <h2>Quiz Result</h2>
+    </div>
+    <div class="card-body">
+      <p>You scored <strong>{{ score }}</strong> out of <strong>{{ numQuestions }}</strong></p>
+      <button (click)="resetQuiz()" class="btn btn-secondary">Take Another Quiz</button>
+    </div>
+  </div>
+</div>

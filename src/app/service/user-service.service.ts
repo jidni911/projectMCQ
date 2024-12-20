@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, delay, generate, map, Observable, of } from 'rxjs';
 import { user } from 'models/user';
+import { API_URL, SERVER_URL } from '../global';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserServiceService {
 
-    private path = "http://localhost:3000/users/";
-    // private path = "http://192.168.20.135:3000/users/";
+    private path = SERVER_URL+"/users/";
 
     constructor(private http: HttpClient) { }
-
     // Get all users
     getAllUsers() {
         return this.http.get<user[]>(this.path);

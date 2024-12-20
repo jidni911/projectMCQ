@@ -16,6 +16,7 @@
                         <p><strong>Name:</strong> {{ getCurrentUser().name }}</p>
                         <p><strong>Email:</strong> {{ getCurrentUser().email }}</p>
                         <p><strong>Date of Birth:</strong> {{ getCurrentUser().dob }}</p>
+                        <p><strong>Role</strong> {{ getCurrentUser().role }}</p>
                     </div>
                     <div class="col">
                         <img *ngIf="getCurrentUser().image" [src]="getCurrentUser().image" alt="User Image"

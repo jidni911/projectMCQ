@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { mcq } from 'models/mcq';
+import { API_URL, SERVER_URL } from '../global';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class McqService {
 
 
 
-  private path = "http://localhost:3000/mcqs/";
+  private path = SERVER_URL+"/mcqs/";
   // private path = "http://192.168.20.135:3000/mcqs/";
 
   constructor(private http: HttpClient) { }

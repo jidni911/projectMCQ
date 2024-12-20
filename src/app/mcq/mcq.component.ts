@@ -1,6 +1,6 @@
-import { McqService } from './../service/mcq.service';
 import { Component, OnInit } from '@angular/core';
-import { mcq } from 'models/mcq';
+import { user } from 'models/user';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-mcq',
@@ -9,17 +9,21 @@ import { mcq } from 'models/mcq';
 })
 export class McqComponent implements OnInit {
 
-
   bgimageurl = 'assets/images/mcqbg.png';
-  allMCQs!: mcq[]
 
 
-    constructor(private mcqService: McqService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.mcqService.getAll().subscribe((res)=>{
-      this.allMCQs = res;
-    })
+    
+  }
+
+  getCurrentUser(): user {
+    return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "", role: "" } : AppComponent.currentUser;
+  }
+
+  isLoggedin(): boolean {
+    return AppComponent.currentUser != null;
   }
 
 

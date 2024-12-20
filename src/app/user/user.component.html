@@ -10,36 +10,38 @@ background-position: top center;
 
         <div class="text-danger text-center h1">Users</div>
         <tr>
-          <th>ID</th>
+          <th *ngIf="isAdmin()">ID</th>
           <th>Name</th>
           <th>email</th>
-          <th>Password</th>
+          <th *ngIf="isAdmin()">Password</th>
           <th>DoB</th>
+          <th>Role</th>
           <th>Image</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
         <tr class="moye" *ngFor="let user of allUser ">
-          <td class="moye">{{ user.id }}</td>
+          <td *ngIf="isAdmin()">{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.password }}</td>
+          <td *ngIf="isAdmin()">{{ user.password }}</td>
           <td>{{ user.dob }}</td>
+          <td>{{ user.role }}</td>
           <td><img [src]="user.image" alt="User Image" width="50" height="50"></td>
           <td>
             <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
               (click)="viewUser(user)">View</a>
             <a (click)="viewUser(user)" class="btn btn-outline-warning" data-bs-toggle="modal" href="#exampleModalToggle2"
-              role="button">Edit</a>
-            <a (click)="deleteUser(user.id)" class="btn btn-danger" >Delete</a>
+              role="button" *ngIf="isAdmin()">Edit</a>
+            <a (click)="deleteUser(user.id)" class="btn btn-danger" *ngIf="isAdmin()">Delete</a>
           </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td colspan="7" class="text-center">
-            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+            <button *ngIf="isAdmin()" type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
               data-bs-target="#addUserModal">
               Add User
             </button>

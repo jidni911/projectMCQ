@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCurrentUser(): user {
-    return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
+    return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "", role : "" } : AppComponent.currentUser;
   }
 
   isLoggedin(): boolean {

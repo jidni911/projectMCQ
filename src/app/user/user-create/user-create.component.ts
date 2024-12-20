@@ -19,13 +19,14 @@ export class UserCreateComponent {
     email: new FormControl(),
     password: new FormControl(),
     dob: new FormControl(),
-    image: new FormControl()
+    image: new FormControl(),
+    role: new FormControl('user')
   })
 
 
   onSubmit() {
     this.userService.addUser(this.userCreateForm.value).subscribe((r) => {
-      this.notifyParent.emit();
+      this.notifyParent.emit(this.userCreateForm.value);
     })
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { user } from 'models/user';
 import { UserServiceService } from '../service/user-service.service';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user',
@@ -11,10 +12,10 @@ import { UserInfoComponent } from './user-info/user-info.component';
 export class UserComponent implements OnInit {
 
   bgimageurl = 'assets/images/userbg.png';
-  
+
 
   allUser!: user[];
-  selecterUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "" };
+  selecterUser: user = { id: "", name: "", email: "", password: "", image: "", dob: "", role: "" };
 
   @ViewChild(UserInfoComponent) userInfoComponent!: UserInfoComponent;
 
@@ -27,6 +28,9 @@ export class UserComponent implements OnInit {
       this.allUser = res;
     })
   }
+  isAdmin(): any {
+    return AppComponent.currentUser?.role === 'admin';
+  }
   viewUser(user: user) {
     this.selecterUser = user;
     setTimeout(() => {
@@ -34,8 +38,8 @@ export class UserComponent implements OnInit {
     }, 200)
   }
   deleteUser(id: string) {
-    if(window.confirm("Are you sure you want to delete this?")){
-      this.userService.deleteUser(id).subscribe((s)=>{
+    if (window.confirm("Are you sure you want to delete this?")) {
+      this.userService.deleteUser(id).subscribe((s) => {
         alert('User Deleted');
         this.ngOnInit();
       })

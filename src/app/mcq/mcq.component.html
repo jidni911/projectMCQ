@@ -3,34 +3,9 @@
             background-size: cover;
             background-position: center;
             min-height: 100vh;">
-  <!-- Header Section -->
-  <div class="text-center py-5 bg-dark bg-opacity-50 text-white">
-    <h1 class="display-5 fw-bold">Engaging MCQs for You!</h1>
-    <p class="lead">Challenge your knowledge and learn something new.</p>
-  </div>
-
-  <!-- MCQ List Section -->
-  <div class="container py-4">
-    <div class="row g-4">
-      <div *ngFor="let mcq of allMCQs" class="col-md-6 col-lg-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title fw-bold mb-3">{{ mcq.question }}</h5>
-            <div class="mb-3">
-              <div *ngFor="let option of mcq.options" class="form-check">
-                <input class="form-check-input" type="radio" name="option{{ mcq.id }}"
-                  id="option{{ mcq.id }}_{{ option }}" />
-                <label class="form-check-label" for="option{{ mcq.id }}_{{ option }}">
-                  {{ option }}
-                </label>
-              </div>
-            </div>
-            <div class="mt-auto text-muted small">
-              <span class="badge bg-primary">{{ mcq.topic }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
+  <!-- Footer Section -->
+  <footer class="bg-dark bg-opacity-50 text-white text-center py-3">
+    <p class="mb-0">© 2024 MCQ App. All rights reserved.</p>
+  </footer>
 </div>

@@ -1,5 +1,4 @@
-import { token } from 'models/teken';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { user } from 'models/user';
@@ -19,7 +18,7 @@ export class CurrentUserInfoComponent {
   ) { }
 
   getCurrentUser(): user {
-    return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "" } : AppComponent.currentUser;
+    return AppComponent.currentUser == null ? { id: "", name: "", email: "", password: "", image: "", dob: "", role : "" } : AppComponent.currentUser;
   }
 
   getCurrentToken(){
@@ -36,7 +35,8 @@ export class CurrentUserInfoComponent {
     email: new FormControl(this.getCurrentUser()),
     password: new FormControl(this.getCurrentUser()),
     dob: new FormControl(this.getCurrentUser()),
-    image: new FormControl(this.getCurrentUser())
+    image: new FormControl(this.getCurrentUser()),
+    role: new FormControl(this.getCurrentUser())
   })
 
 
