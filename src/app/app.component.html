@@ -14,7 +14,7 @@
         <a [className]="currentTab=='user' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('user')">User</a>
       </li>
       <li class="nav-item">
-        <a [className]="currentTab=='test' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('test')">Test</a>
+        <a [className]="currentTab=='test' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('test')" *ngIf="getCurrentUser().role=='admin'">Test</a>
       </li>
     </ul>
     <form class="d-flex my-2 my-lg-0">

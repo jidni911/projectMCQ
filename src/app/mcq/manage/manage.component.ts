@@ -37,7 +37,7 @@ export class ManageComponent implements OnInit {
       } else {
         this.selectedMCQs = this.allMCQs.filter(mcq => mcq.credit == this.getCurrentUser().id);
       }
-      this.selectedMCQs = this.allMCQs;
+      // this.selectedMCQs = this.allMCQs;
 
       this.allTopics = [...new Set(this.selectedMCQs.map(mcq => mcq.topic))];
       this.allCredits = [...new Set(this.selectedMCQs.map(mcq => mcq.credit))];
