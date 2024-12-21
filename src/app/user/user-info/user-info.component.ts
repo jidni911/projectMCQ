@@ -25,7 +25,9 @@ export class UserInfoComponent {
 
     }, 1000);
   }
-  editButtonClick() {
+  isAdmin: boolean = false;
+  editButtonClick(isAdmin: boolean = false) {
+    this.isAdmin = isAdmin;
     this.userEditForm.setValue(this.selectingUser);
   }
   userEditForm: FormGroup = new FormGroup({

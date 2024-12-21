@@ -33,7 +33,13 @@
         <!-- Answers -->
         <div class="mb-3">
           <label for="answers" class="form-label fw-bold">Correct Answers</label>
-          <input type="text" class="form-control" id="answers" name="answers" readonly required value="{{getAnswers()}}">
+          <div class="input-group">
+            <input type="text" class="form-control" id="answers" name="answers" readonly required
+              value="{{getAnswers()}}">
+            <button type="button" class="btn btn-warning" (click)="resetAnswers()">
+              Reset
+            </button>
+          </div>
         </div>
 
         <!-- Credit -->

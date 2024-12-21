@@ -1,43 +1,40 @@
 <nav class="navbar navbar-expand-sm navbar-primary bg-info px-5 sticky-top nav-pills">
-    <a class="navbar-brand" href="">{{title}}</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a [className]="currentTab=='home' ? ' nav-link active' : 'nav-link'"
-                    (click)="tabClicked('home')">Home</a>
-            </li>
-            <li class="nav-item">
-                <a [className]="currentTab=='mcq' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('mcq')">MCQ</a>
-            </li>
-            <li class="nav-item">
-                <a [className]="currentTab=='user' ? ' nav-link active' : 'nav-link'"
-                    (click)="tabClicked('user')">User</a>
-            </li>
-            <li class="nav-item">
-                <a [className]="currentTab=='test' ? ' nav-link active' : 'nav-link'"
-                    (click)="tabClicked('test')">Test</a>
-            </li>
-        </ul>
-        <form class="d-flex my-2 my-lg-0">
-            <input class="form-control me-sm-2" type="text" placeholder="Search" />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-            </button>
-        </form>
-        <!-- <a name="" id="" class="btn btn-primary" href="#" role="button"></a> -->
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loggingModal"
-            *ngIf="!isLoggedin()">
-            Log in
-        </button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-            data-bs-target="#currentUserInfoModal" *ngIf="isLoggedin()">
-            {{getCurrentUser().name}}
-        </button>
+  <a class="navbar-brand" href="">{{title}}</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a [className]="currentTab=='home' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('home')">Home</a>
+      </li>
+      <li class="nav-item">
+        <a [className]="currentTab=='mcq' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('mcq')">MCQ</a>
+      </li>
+      <li class="nav-item">
+        <a [className]="currentTab=='user' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('user')">User</a>
+      </li>
+      <li class="nav-item">
+        <a [className]="currentTab=='test' ? ' nav-link active' : 'nav-link'" (click)="tabClicked('test')">Test</a>
+      </li>
+    </ul>
+    <form class="d-flex my-2 my-lg-0">
+      <input class="form-control me-sm-2" type="text" placeholder="Search" />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+    <!-- <a name="" id="" class="btn btn-primary" href="#" role="button"></a> -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loggingModal"
+      *ngIf="!isLoggedin()">
+      Log in
+    </button>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#currentUserInfoModal"
+      *ngIf="isLoggedin()">
+      {{getCurrentUser().name}}
+    </button>
 
-    </div>
+  </div>
 </nav>
 
 
@@ -48,59 +45,58 @@
 
 <!-- Modal -->
 <div class="modal fade" id="loggingModal" tabindex="-1" role="dialog" aria-labelledby="loggingModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <form [formGroup]="loggingform" (ngSubmit)="logginginFormSubmit()">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loggingModalTitle">
-                        Log in
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="mb-3">
-                            <label for="logginginMail" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="logginginMail" id="logginginMail"
-                                formControlName="email" aria-describedby="logginginemailHelpId" autocomplete="email"
-                                placeholder="abc@mail.com" required />
-                            <small id="logginginemailHelpId" class="form-text text-muted">Enter Email</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="logginginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="logginginPassword" id="logginginPassword"
-                                autocomplete="current-password" formControlName="password" placeholder="" required />
-                        </div>
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="bsModalCloseButton">
-                        Close
-                    </button>
-                    <button type="submit" class="btn btn-primary" [disabled]="loggingButtonDisabled">Log in</button>
-                </div>
-            </form>
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form [formGroup]="loggingform" (ngSubmit)="logginginFormSubmit()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loggingModalTitle">
+            Log in
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="mb-3">
+              <label for="logginginMail" class="form-label">Email</label>
+              <input type="email" class="form-control" name="logginginMail" id="logginginMail" formControlName="email"
+                aria-describedby="logginginemailHelpId" autocomplete="email" placeholder="abc@mail.com" required />
+              <small id="logginginemailHelpId" class="form-text text-muted">Enter Email</small>
+            </div>
+            <div class="mb-3">
+              <label for="logginginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" name="logginginPassword" id="logginginPassword"
+                autocomplete="current-password" formControlName="password" placeholder="" required />
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="bsModalCloseButton">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary" [disabled]="loggingButtonDisabled">Log in</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
 
 <script>
-    var loggingModal = document.getElementById('loggingModal');
+  var loggingModal = document.getElementById('loggingModal');
 
-    loggingModal.addEventListener('show.bs.modal', function (event) {
-        // Button that triggered the modal
-        let button = event.relatedTarget;
-        // Extract info from data-bs-* attributes
-        let recipient = button.getAttribute('data-bs-whatever');
+  loggingModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    let button = event.relatedTarget;
+    // Extract info from data-bs-* attributes
+    let recipient = button.getAttribute('data-bs-whatever');
 
-        // Use above variables to manipulate the DOM
-    });
+    // Use above variables to manipulate the DOM
+  });
 </script>
 
 <div class="">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
 

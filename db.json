@@ -224,6 +224,24 @@
       "dob": "2000-12-27",
       "image": null,
       "role": "admin"
+    },
+    {
+      "id": "7097",
+      "name": "Mahabub",
+      "email": "mahabub.web404@gmail.com",
+      "password": "12345",
+      "dob": "1996-12-10",
+      "image": null,
+      "role": "user"
+    },
+    {
+      "id": "02d6",
+      "name": "Tarik Jamil",
+      "email": "abc@gmail.com",
+      "password": "12345678",
+      "dob": "1999-12-31",
+      "image": null,
+      "role": "user"
     }
   ],
   "mcqs": [
@@ -237,7 +255,7 @@
         "Rome"
       ],
       "answers": [
-        2
+        3
       ],
       "credit": 5,
       "topic": "Geography"
@@ -268,7 +286,7 @@
         "Jane Austen"
       ],
       "answers": [
-        1
+        2
       ],
       "credit": 5,
       "topic": "Literature"
@@ -347,7 +365,7 @@
         "Nikola Tesla"
       ],
       "answers": [
-        1
+        2
       ],
       "credit": 5,
       "topic": "Physics"
@@ -378,8 +396,7 @@
         "South America"
       ],
       "answers": [
-        0,
-        2
+        1
       ],
       "credit": 10,
       "topic": "Geography"
@@ -394,7 +411,7 @@
         "Claude Monet"
       ],
       "answers": [
-        2
+        3
       ],
       "credit": 5,
       "topic": "Art"
@@ -410,7 +427,8 @@
       ],
       "answers": [
         0,
-        2
+        1,
+        3
       ],
       "credit": 10,
       "topic": "Biology"
@@ -425,7 +443,7 @@
         "120°C"
       ],
       "answers": [
-        1
+        2
       ],
       "credit": 5,
       "topic": "Chemistry"
@@ -441,7 +459,8 @@
       ],
       "answers": [
         0,
-        2
+        1,
+        3
       ],
       "credit": 10,
       "topic": "Environment"
@@ -456,7 +475,7 @@
         "Arctic Ocean"
       ],
       "answers": [
-        2
+        3
       ],
       "credit": 5,
       "topic": "Geography"
@@ -471,9 +490,9 @@
         "Islam"
       ],
       "answers": [
-        1,
         2,
-        3
+        3,
+        4
       ],
       "credit": 10,
       "topic": "Religion"
@@ -488,7 +507,7 @@
         "John Adams"
       ],
       "answers": [
-        1
+        2
       ],
       "credit": 5,
       "topic": "History"
@@ -503,9 +522,9 @@
         "Yellow"
       ],
       "answers": [
-        0,
-        2,
-        3
+        1,
+        3,
+        4
       ],
       "credit": 10,
       "topic": "Art"
@@ -520,8 +539,8 @@
         "Mouse"
       ],
       "answers": [
-        0,
-        2
+        1,
+        3
       ],
       "credit": 10,
       "topic": "Technology"
@@ -536,7 +555,7 @@
         "HO"
       ],
       "answers": [
-        0
+        1
       ],
       "credit": 5,
       "topic": "Chemistry"
@@ -567,6 +586,16 @@
       "id": "e2d0",
       "mail": "gidni441@gmail.com",
       "pass": "123123"
+    },
+    {
+      "id": "1939",
+      "mail": "gidni441@gmail.com",
+      "pass": "123123"
+    },
+    {
+      "id": "8f57",
+      "mail": "mahabub.web404@gmail.com",
+      "pass": "12345"
     }
   ]
 }

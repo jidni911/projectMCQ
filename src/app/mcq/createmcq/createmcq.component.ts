@@ -85,6 +85,10 @@ export class CreatemcqComponent implements OnInit {
     return this.mcq.answers.includes(value)
   }
 
+  resetAnswers() {
+    this.mcq.answers = [];
+  }
+
   onSubmit() {
     for (let index = this.mcq.options.length - 1; index >= 0; index--) {
       let val = document.getElementById('answers' + (index + 1)) as HTMLInputElement

@@ -1,54 +1,146 @@
-<div class="table-responsive">
-  <table class="table table-striped table-hover table-borderless table-info align-middle">
-    <thead class="table-dark  ">
-      <caption>
-        MCQ_Manager
-      </caption>
-      <tr>
-        <th>ID</th>
-        <th>Question</th>
-        <th>Options</th>
-        <th>Answer</th>
-        <th>Credit</th>
-        <th>User</th>
-        <th>Topic</th>
-        <th>Perform</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-      <tr class="table-primary" *ngFor="let mcq of selectedMCQs">
-        <td>{{mcq.id}}</td>
-        <td>{{mcq.question}}</td>
-        <td>
-          <ol>
-            <li *ngFor="let option of mcq.options">{{option}}</li>
-          </ol>
-        </td>
-        <td>{{mcq.answers}}</td>
-        <td>{{mcq.credit}}</td>
-        <td>{{getUserName(mcq.credit)}}</td>
-        <td>{{mcq.topic}}</td>
-        <td>
-          <button class="btn btn-primary">Edit</button>
-          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteMCQModal">
-            delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
+<div class="container" *ngIf="!mcqEditMode">
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-borderless table-info align-middle">
+      <thead class="table-dark  ">
+        <caption>
+          MCQ_Manager
+        </caption>
+        <tr>
+          <th>ID</th>
+          <th>Question</th>
+          <th>Options</th>
+          <th>Answer</th>
+          <th>Credit</th>
+          <th>User</th>
+          <th>Topic</th>
+          <th>Perform</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr class="table-primary" *ngFor="let mcq of selectedMCQs">
+          <td>{{mcq.id}}</td>
+          <td>{{mcq.question}}</td>
+          <td>
+            <ol>
+              <li *ngFor="let option of mcq.options">{{option}}</li>
+            </ol>
+          </td>
+          <td>{{mcq.answers}}</td>
+          <td>{{mcq.credit}}</td>
+          <td>{{getUserName(mcq.credit)}}</td>
+          <td>{{mcq.topic}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editMCQ(mcq)">Edit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+              data-bs-target="#deleteMCQModal" (click)="setDeleteTarget(mcq)">
+              delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
 
-    </tfoot>
-  </table>
+      </tfoot>
+    </table>
+  </div>
+
+
 </div>
+
+
+
+
+
+
+
+<div class="container py-5" *ngIf="mcqEditMode">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Edit MCQ {{editableMCQ.id}}</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #mcqForm="ngForm">
+        <!-- Question -->
+        <div class="mb-3">
+          <label for="question" class="form-label fw-bold">Question</label>
+          <textarea class="form-control" id="question" name="question" rows="3" required
+            [(ngModel)]="editableMCQ.question"></textarea>
+        </div>
+
+        <!-- Options -->
+        <div class="mb-3">
+          <label for="options" class="form-label fw-bold">Options</label>
+          <div *ngFor="let option of editableMCQ.options; let i = index" class="input-group mb-2">
+
+            <input type="checkbox" class="btn-check" name="btnradio{{ i+1 }}" id="btnradio{{ i+1 }}" autocomplete="off"
+              (click)="answerClicked(i+1)" [checked]="isChecked(i+1)">
+            <label class="btn btn-outline-primary" for="btnradio{{ i+1 }}">Radio {{i+1}}</label>
+
+            <input type="text" class="form-control" placeholder="Option {{ i + 1 }}" id="answers{{i+1}}"
+              name="option{{ i }}" required [value]="editableMCQ.options[i]" />
+            <button type="button" class="btn btn-outline-danger" (click)="removeOption(i)">
+              Remove
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline-success" (click)="addOption()">Add Option</button>
+        </div>
+
+        <!-- Answers -->
+        <div class="mb-3">
+          <label for="answers" class="form-label fw-bold">Correct Answers</label>
+
+          <div class="input-group">
+            <input type="text" class="form-control" id="answers" name="answers" readonly required
+              value="{{getAnswers()}}">
+            <button type="button" class="btn btn-warning" (click)="resetAnswers()">
+              Reset
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Credit -->
+        <div class="mb-3">
+          <label for="credit" class="form-label fw-bold">Credit</label>
+          <input type="text" class="form-control" id="credit" name="credit" min="1" readonly
+            value="{{getUserName(this.editableMCQ.credit)}}">
+        </div>
+
+        <!-- Topic -->
+        <div class="mb-3">
+          <label for="topic" class="form-label fw-bold">Topic</label>
+          <input type="text" class="form-control" id="topic" name="topic" required [(ngModel)]="editableMCQ.topic">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button (click)="onCancel()" class="btn btn-warning px-4">Cancel MCQ</button>
+          <button type="submit" class="btn btn-primary px-4" [disabled]="!mcqForm.valid">Update MCQ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 <!-- Modal Body -->
 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-<div class="modal fade" id="deleteMCQModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-  aria-labelledby="deleteMCQModalTitle" aria-hidden="true">
+<div class="modal fade" id="deleteMCQModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+  role="dialog" aria-labelledby="deleteMCQModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,12 +149,44 @@
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">Body</div>
+      <div class="modal-body">
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <p>Question: {{deleteTarget.question}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Options:</p>
+              <ul>
+                <li *ngFor="let option of deleteTarget.options">{{option}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Answers: {{deleteTarget.answers}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Credit: {{getUserName(deleteTarget.credit)}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Topic: {{deleteTarget.topic}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (cancel)="cancelDelete()">
           Cancel
         </button>
-        <button type="button" class="btn btn-primary">Delete </button>
+        <button type="button" class="btn btn-primary" (click)="deleteMCQ(deleteTarget.id)">Delete </button>
       </div>
     </div>
   </div>

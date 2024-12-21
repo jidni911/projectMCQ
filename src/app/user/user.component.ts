@@ -34,7 +34,7 @@ export class UserComponent implements OnInit {
   viewUser(user: user) {
     this.selecterUser = user;
     setTimeout(() => {
-      this.userInfoComponent.editButtonClick();
+      this.userInfoComponent.editButtonClick(this.isAdmin());
     }, 200)
   }
   deleteUser(id: string) {

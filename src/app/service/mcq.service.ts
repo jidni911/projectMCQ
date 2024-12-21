@@ -42,7 +42,7 @@ export class McqService {
   }
 
   // Delete user by ID
-  delete(id: mcq) {
+  delete(id: string) {
     return this.http.delete(`${this.path}${id}`);
   }
 }
