@@ -574,6 +574,155 @@
       ],
       "credit": "0619",
       "topic": "Angular"
+    },
+    {
+      "id": "fbd6",
+      "question": "Which of the following technologies in spring is used to allow an application to manipulate Java objects at\nruntime?",
+      "options": [
+        "Weaving",
+        "SPEL",
+        "RPC",
+        "JCP"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "ef3f",
+      "question": "How many ways Inversion of control is executed?",
+      "options": [
+        "Dependency lookup",
+        "Dependency injection",
+        "Traditional approach",
+        "Both a & b"
+      ],
+      "answers": [
+        4
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "17d5",
+      "question": "Which of the following are core concepts of AOP?",
+      "options": [
+        "Joinpoints",
+        "Advice",
+        "Pointcuts",
+        "All of the above"
+      ],
+      "answers": [
+        4
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "516c",
+      "question": "What is the purpose of interfaces?",
+      "options": [
+        "Loose coupling",
+        "Reduce coupling",
+        "Remove coupling",
+        "All of the above"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "c6d6",
+      "question": "What is the abbreviation of DTO?",
+      "options": [
+        "Database Objects",
+        "Data Transfer Objects",
+        "Data Objects",
+        "None"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "08b7",
+      "question": "Why we use named parameters ?",
+      "options": [
+        "Callable Statements",
+        "Statements",
+        "Prepared Statements",
+        "Transactions"
+      ],
+      "answers": [
+        3
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "d47a",
+      "question": "How many ways you can configure spring dependency?",
+      "options": [
+        "Externally in Xml file",
+        "Text file",
+        "Faces-config",
+        "Java annotations",
+        "Both A & D"
+      ],
+      "answers": [
+        5
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "bf89",
+      "question": "Transaction and AOP service, message source for internationalization (i18n), and application event handling\nservices are provided by ?",
+      "options": [
+        "BeanFactory",
+        "FactoryBean",
+        "ApplicationContext"
+      ],
+      "answers": [
+        3
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "ef51",
+      "question": "Which of the following is a destruction method ?",
+      "options": [
+        "afterPropertiesSet",
+        "destroy-method attribute",
+        "nit-method attribute",
+        "None"
+      ],
+      "answers": [
+        2
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
+    },
+    {
+      "id": "eb84",
+      "question": "When Dependency Injections are executed?",
+      "options": [
+        "Coding time",
+        "Compile time",
+        "Run time"
+      ],
+      "answers": [
+        3
+      ],
+      "credit": "0619",
+      "topic": "Spring Boot"
     }
   ],
   "tokens": [
@@ -593,12 +742,12 @@
       "pass": "12345"
     },
     {
-      "id": "56e2",
-      "mail": "john.doe@example.com",
-      "pass": "password123"
+      "id": "d57f",
+      "mail": "gidni441@gmail.com",
+      "pass": "123123"
     },
     {
-      "id": "d57f",
+      "id": "011b",
       "mail": "gidni441@gmail.com",
       "pass": "123123"
     }
